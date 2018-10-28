@@ -13,6 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+//If you want to focus only on the web layer and not start a complete ApplicationContext, consider using @WebMvcTest instead.
 @AutoConfigureMockMvc
 public class InvoiceAutoConfigureMockMvcTest {
 
