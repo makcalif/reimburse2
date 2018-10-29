@@ -9,6 +9,6 @@ public class InvoiceController {
 
     @GetMapping("/invoice")
     public Invoice getInvoice() {
-        return null;
+        return new Invoice();
     }
 }
