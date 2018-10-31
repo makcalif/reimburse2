@@ -10,6 +10,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.BDDMockito;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -48,7 +49,15 @@ public class CityServiceTest extends TestCase {
         city.setId(2L);
         City savedCity = cityService.enrichAndCreateCity(city);
 
-        BDDMockito.verify()
+    }
+
+    @Test
+    public void should_call_service_getPopulation_once() {
+        City expectedCity = new City(KARACHI, 50000L);
+        City city = new City(KARACHI, 50000L);
+         City savedCity = cityService.enrichAndCreateCity(city);
+
+        Mockito.verify(populationService, Mockito.times(1)).getPopulation(KARACHI);
 
         Assertions.assertThat(savedCity.equals(expectedCity));
     }
