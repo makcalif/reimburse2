@@ -6,7 +6,8 @@ public class Invoice {
     private Boolean approved = false;
     String title;
 
-    public Invoice() {
+    public Invoice(String title) {
+        this.title = title;
         this.id = 1L;
     }
 

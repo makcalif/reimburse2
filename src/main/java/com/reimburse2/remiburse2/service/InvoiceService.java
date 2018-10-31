@@ -18,4 +18,8 @@ public class InvoiceService {
     public Optional<Invoice> getInvoice(long l) {
         return this.invoiceRepository.findById(l);
     }
+
+    public Invoice createInvoice(Invoice invoice) {
+        return invoice;
+    }
 }

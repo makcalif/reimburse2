@@ -37,8 +37,8 @@ public class InvoiceServiceTest {
 
     @Test
     public void ShouldGetInvoice() throws Exception{
-        Invoice invoice = new Invoice();
-        invoice.setTitle(CHICAGO_TRIP);
+        Invoice invoice = new Invoice(CHICAGO_TRIP);
+       // invoice.setTitle(CHICAGO_TRIP);
         BDDMockito.given(invoiceRepository.findById(anyLong())).willReturn(Optional.of(invoice));
         Optional<Invoice> invoiceOptional = invoiceService.getInvoice(anyLong());
 
